@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingHorizontal="24dp"
     android:paddingVertical="16dp"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,6 +50,30 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/btn_desconectar"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16sp"
+            android:layout_weight="2"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/rounded_r8"
+                android:backgroundTint="@color/accentRed"
+                android:paddingHorizontal="12sp"
+                android:paddingVertical="8sp"
+                android:text="@string/desconectar"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="?android:textColorSecondary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
         <ImageView
             android:id="@+id/btn_menu"
             android:layout_width="90dp"
@@ -60,6 +84,15 @@
             app:tint="?android:textColorSecondary" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/medias"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,7 +155,7 @@
                 android:id="@+id/tv_batimentos"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="64/80"
+                android:text="@string/valor_desconhecido"
                 android:textAlignment="center"
                 android:textColor="?android:textColorSecondary"
                 android:textSize="14sp"
@@ -235,7 +268,7 @@
                 android:id="@+id/tv_passos"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@string/_5782_6000"
+                android:text="@string/valor_desconhecido"
                 android:textAlignment="center"
                 android:textColor="?android:textColorSecondary"
                 android:textSize="14sp"
@@ -244,11 +277,20 @@
 
     </LinearLayout>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/hist_rico"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/li_historico_batimentos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/rounded_r16"
         android:backgroundTint="?android:colorSecondary"
         android:baselineAligned="false"
@@ -321,13 +363,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="abrir historico de batimentos"
+            android:contentDescription="@string/abrir_historico_de_batimentos"
             android:src="@drawable/ic_baseline_arrow_forward_ios_24"
             app:tint="?android:textColor" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/li_historico_oxigenacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -404,11 +447,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/abrir_historico_de_batimentos"
             android:src="@drawable/ic_baseline_arrow_forward_ios_24"
             app:tint="?android:textColor" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/li_historico_passos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -483,6 +528,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:contentDescription="@string/abrir_historico_de_batimentos"
             android:src="@drawable/ic_baseline_arrow_forward_ios_24"
             app:tint="?android:textColor" />
     </LinearLayout>
