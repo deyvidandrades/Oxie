@@ -18,4 +18,7 @@
     <string name="passos_">passos</string>
     <string name="monitor">monitor</string>
     <string name="conectar">Conectar</string>
+    <string name="_5782_6000">5782/6000</string>
+    <string name="valor_desconhecido">\??/??</string>
+    <string name="percent">%</string>
 </resources>
