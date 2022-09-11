@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/rounded_r16.xml" value="0.2475" />
         <entry key="app/src/main/res/drawable/rounded_r24.xml" value="0.2475" />
         <entry key="app/src/main/res/drawable/rounded_r8.xml" value="0.2475" />
+        <entry key="app/src/main/res/layout/activity_configuracoes.xml" value="0.2986842105263158" />
         <entry key="app/src/main/res/layout/activity_historico.xml" value="0.22401315789473683" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22401315789473683" />
         <entry key="app/src/main/res/layout/item_historico.xml" value="0.22401315789473683" />

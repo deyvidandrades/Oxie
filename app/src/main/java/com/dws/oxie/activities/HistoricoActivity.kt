@@ -24,7 +24,7 @@ class HistoricoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_historico)
 
         val recyclerHistorico = findViewById<RecyclerView>(R.id.recycler_historico)
-        val btn_voltar = findViewById<ImageView>(R.id.btn_voltar)
+        val btnVoltar = findViewById<ImageView>(R.id.btn_voltar)
         val liBatimentos = findViewById<LinearLayout>(R.id.li_batimentos)
         val liOxigenacao = findViewById<LinearLayout>(R.id.li_oxigenacao)
         val liPassos = findViewById<LinearLayout>(R.id.li_passos)
@@ -58,7 +58,7 @@ class HistoricoActivity : AppCompatActivity() {
             }
         }
 
-        btn_voltar.setOnClickListener { view ->
+        btnVoltar.setOnClickListener { view ->
             AnimacaoBotao.animar(view)
             finish()
         }
