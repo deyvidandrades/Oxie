@@ -1,0 +1,25 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Oxie" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!--LIGHT!!!-->
+        <item name="android:colorPrimary">@color/backgroundDark</item>
+        <item name="android:colorSecondary">@color/backgroundLight</item>
+        <item name="android:colorBackground">@color/backgroundDark</item>
+
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textColorSecondary">@color/textLight</item>
+        <item name="android:colorAccent">@color/accentRed</item>
+        <item name="colorAccent">@color/accentRed</item>
+
+        <item name="android:statusBarColor">@color/backgroundDark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/backgroundDark</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+    </style>
+
+    <style name="Theme.Oxie.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
