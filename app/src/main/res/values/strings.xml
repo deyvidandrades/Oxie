@@ -1,18 +1,13 @@
 <resources>
     <string name="app_name">Oxie</string>
-    <!-- Strings used for fragments for navigation -->
 
     <string name="batimentos">Batimentos</string>
     <string name="oxigena_o">Oxigenação</string>
     <string name="passos">Passos</string>
-    <string name="passos_">passos</string>
     <string name="monitor">monitor</string>
     <string name="conectar">Conectar</string>
-    <string name="_5782_6000">5782/6000</string>
-    <string name="valor_desconhecido">\??/??</string>
     <string name="percent">%</string>
     <string name="desconectar">Parar</string>
-    <string name="abrir_historico_de_batimentos">abrir historico de batimentos</string>
     <string name="medias">Medias</string>
     <string name="hist_rico">Histórico</string>
     <string name="_11_09_2022">11/09/2022 12:09</string>
@@ -24,17 +19,11 @@
     <string name="por_deyvidandrades">por <b>@deyvidandrades</b></string>
     <string name="zero">0</string>
     <string name="bpm">bpm</string>
-    <string name="data">"Data: "</string>
     <string name="_100">100</string>
-    <string name="_90">90</string>
     <string name="_80">80</string>
-    <string name="_70">70</string>
     <string name="_60">60</string>
-    <string name="_50">50</string>
     <string name="_40">40</string>
-    <string name="_30">30</string>
     <string name="_20">20</string>
-    <string name="_10">10</string>
     <string name="_0">0</string>
     <string name="ver_todos"><u>Ver todos</u></string>
 </resources>
