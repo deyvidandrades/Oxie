@@ -1,4 +1,4 @@
-package com.dws.mufla.adaptadores
+package com.dws.oxie.adaptadores
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dws.oxie.R
 import com.dws.oxie.objetos.ItemHistorico
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AdaptadorItemHistorico(context: Context, arrayList: ArrayList<ItemHistorico>) :
     RecyclerView.Adapter<AdaptadorItemHistorico.ViewHolder>() {
@@ -27,9 +29,14 @@ class AdaptadorItemHistorico(context: Context, arrayList: ArrayList<ItemHistoric
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = arrayList[position]
 
-        holder.tvData.text = item.getData()
-        holder.tvValor.text = item.getValor().toString()
-        holder.tvUnidade.text = item.getUnidade()
+        val simpleDateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
+        val data = simpleDateFormat.format(item.getData())
+
+        holder.tvData.text = data
+        holder.tvValorBatimentos.text = item.getValorBatimentos().toString()
+        holder.tvValorOxigenacao.text = item.getValorOxigenacao().toString()
+        holder.tvValorPassos.text = item.getValorPassos().toString()
+        holder.tvValorPassosRaw.text = "${(item.getValorPassos() * 6000) / 100}/6000"
     }
 
     override fun getItemCount(): Int {
@@ -38,13 +45,17 @@ class AdaptadorItemHistorico(context: Context, arrayList: ArrayList<ItemHistoric
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvData: TextView
-        var tvValor: TextView
-        var tvUnidade: TextView
+        var tvValorBatimentos: TextView
+        var tvValorOxigenacao: TextView
+        var tvValorPassos: TextView
+        var tvValorPassosRaw: TextView
 
         init {
             tvData = itemView.findViewById(R.id.tv_data)
-            tvValor = itemView.findViewById(R.id.tv_valor)
-            tvUnidade = itemView.findViewById(R.id.tv_unidade)
+            tvValorBatimentos = itemView.findViewById(R.id.tv_valor_bpm)
+            tvValorOxigenacao = itemView.findViewById(R.id.tv_valor_oxidacao)
+            tvValorPassos = itemView.findViewById(R.id.tv_valor_passos)
+            tvValorPassosRaw = itemView.findViewById(R.id.tv_valor_passos_raw)
         }
     }
 
