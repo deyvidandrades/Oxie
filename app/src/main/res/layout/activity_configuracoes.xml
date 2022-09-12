@@ -12,10 +12,10 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16sp"
+            android:layout_marginTop="16dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:weightSum="4">
@@ -130,7 +130,6 @@
             android:layout_marginEnd="8dp"
             android:text="@string/por_deyvidandrades"
             android:textColor="?android:textColorSecondary"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
     </LinearLayout>
 </RelativeLayout>

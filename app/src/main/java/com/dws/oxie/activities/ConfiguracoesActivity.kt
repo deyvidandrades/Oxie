@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.dws.oxie.R
 import com.dws.oxie.assistentes.AnimacaoBotao
+import com.dws.oxie.persistencia.Persistencia
 
 class ConfiguracoesActivity : AppCompatActivity() {
 
@@ -24,6 +25,9 @@ class ConfiguracoesActivity : AppCompatActivity() {
 
         btnExcluirDados.setOnClickListener { view ->
             AnimacaoBotao.animar(view)
+
+            Persistencia(applicationContext).deletarDados("historico")
+            parent.recreate()
         }
     }
 }
