@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Oxie</string>
+    <string name="app_name">Oxie Monitor</string>
+    <string name="versao"><b>Oxie monitor</b> v1.0.5 (beta)</string>
+    <string name="por_deyvidandrades">por <b>@deyvidandrades</b></string>
 
     <string name="batimentos">Batimentos</string>
     <string name="oxigena_o">Oxigenação</string>
@@ -15,8 +17,6 @@
     <string name="excluir_dados">Excluir dados</string>
     <string name="excluir">Excluir</string>
     <string name="configura_es">Configurações</string>
-    <string name="versao"><b>Oxie monitor</b> v1.0.3 (beta)</string>
-    <string name="por_deyvidandrades">por <b>@deyvidandrades</b></string>
     <string name="zero">0</string>
     <string name="bpm">bpm</string>
     <string name="_100">100</string>
@@ -26,4 +26,8 @@
     <string name="_20">20</string>
     <string name="_0">0</string>
     <string name="ver_todos"><u>Ver todos</u></string>
+    <string name="endere_o_ip_do_dispositivo">Endereço IP</string>
+    <string name="ip_debug">192.168.0.175</string>
+    <string name="salvar">salvar</string>
+    <string name="dispositivo">Dispositivo</string>
 </resources>
