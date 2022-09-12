@@ -20,7 +20,21 @@
     <string name="excluir_dados">Excluir dados</string>
     <string name="excluir">Excluir</string>
     <string name="configura_es">Configurações</string>
-    <string name="versao">Oxie monitor v1.0 (beta)</string>
-    <string name="por_deyvidandrades">por @deyvidandrades</string>
+    <string name="versao"><b>Oxie monitor</b> v1.0.3 (beta)</string>
+    <string name="por_deyvidandrades">por <b>@deyvidandrades</b></string>
     <string name="zero">0</string>
+    <string name="bpm">bpm</string>
+    <string name="data">"Data: "</string>
+    <string name="_100">100</string>
+    <string name="_90">90</string>
+    <string name="_80">80</string>
+    <string name="_70">70</string>
+    <string name="_60">60</string>
+    <string name="_50">50</string>
+    <string name="_40">40</string>
+    <string name="_30">30</string>
+    <string name="_20">20</string>
+    <string name="_10">10</string>
+    <string name="_0">0</string>
+    <string name="ver_todos"><u>Ver todos</u></string>
 </resources>

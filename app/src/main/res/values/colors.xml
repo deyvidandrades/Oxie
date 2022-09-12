@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="backgroundDark">#312F30</color>
-    <color name="backgroundLight">#3A3A3A</color>
+    <color name="backgroundDark">#222831</color><!--#312F30-->
+    <color name="backgroundLight">#D2343B45</color><!--#3A3A3A-->
     <color name="accentRed">#E47474</color>
     <color name="accentGreen">#80C78F</color>
     <color name="accentBlue">#4293CD</color>
