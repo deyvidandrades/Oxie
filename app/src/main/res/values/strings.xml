@@ -26,8 +26,8 @@
     <string name="_20">20</string>
     <string name="_0">0</string>
     <string name="ver_todos"><u>Ver todos</u></string>
-    <string name="endere_o_ip_do_dispositivo">Endereço IP</string>
-    <string name="ip_debug">192.168.0.175</string>
+    <string name="endere_o_ip_do_dispositivo">Endereço IP e porta</string>
+    <string name="ip_debug">192.168.0.175:5000</string>
     <string name="salvar">salvar</string>
     <string name="dispositivo">Dispositivo</string>
 </resources>
