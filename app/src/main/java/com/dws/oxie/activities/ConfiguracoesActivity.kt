@@ -1,6 +1,7 @@
 package com.dws.oxie.activities
 
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,10 @@ class ConfiguracoesActivity : AppCompatActivity() {
 
         val btnVoltar = findViewById<ImageView>(R.id.btn_voltar)
         val btnExcluirDados = findViewById<TextView>(R.id.btn_excluir)
+        val btnSalvarIP = findViewById<TextView>(R.id.btn_salvar)
+        val etEnderecoIP = findViewById<EditText>(R.id.et_endereco_ip)
+
+        etEnderecoIP.setText(Persistencia(applicationContext).carregarIP())
 
         btnVoltar.setOnClickListener { view ->
             AnimacaoBotao.animar(view)
@@ -28,6 +33,12 @@ class ConfiguracoesActivity : AppCompatActivity() {
 
             Persistencia(applicationContext).deletarDados("historico")
             parent.recreate()
+        }
+
+        btnSalvarIP.setOnClickListener { view ->
+            AnimacaoBotao.animar(view)
+            Persistencia(this).salvarIP(etEnderecoIP.text.toString())
+            finish()
         }
     }
 }

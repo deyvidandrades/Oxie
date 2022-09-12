@@ -1,7 +1,6 @@
 package com.dws.oxie.persistencia
 
 import android.content.Context
-import android.util.Log
 import com.dws.oxie.objetos.ItemHistorico
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -28,6 +27,11 @@ class Persistencia(private val context: Context) {
         }
     }
 
+    fun carregarIP(): String {
+        return context.getSharedPreferences(PREFERENCE_STRING, Context.MODE_PRIVATE)
+            .getString("ip", "192.168.0.175:5000")!!
+    }
+
     fun salvarDados(key: String, lista: ArrayList<ItemHistorico>) {
         val listaOld = ArrayList<ItemHistorico>()
 
@@ -37,6 +41,13 @@ class Persistencia(private val context: Context) {
         val listaJSONString = Gson().toJson(listaOld)
         with(context.getSharedPreferences(PREFERENCE_STRING, Context.MODE_PRIVATE).edit()) {
             putString(key, listaJSONString)
+            commit()
+        }
+    }
+
+    fun salvarIP(ip: String) {
+        with(context.getSharedPreferences(PREFERENCE_STRING, Context.MODE_PRIVATE).edit()) {
+            putString("ip", ip)
             commit()
         }
     }

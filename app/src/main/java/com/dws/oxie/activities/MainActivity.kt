@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textBatimentos: TextView
     private lateinit var textOxigenacao: TextView
     private lateinit var textPassos: TextView
+    private lateinit var IP: List<String>
 
     private lateinit var progressBatimentos: CircularProgressIndicator
     private lateinit var progressOxigenacao: CircularProgressIndicator
@@ -39,16 +41,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainHandler: Handler
     private val updateTextTask = object : Runnable {
         override fun run() {
-            var arrayAtualizacoes = fazerRequisicao()
+            IP = Persistencia(applicationContext).carregarIP().split(":")
+            Log.d("DWS.D", IP.toString())
 
-            if (arrayAtualizacoes.size == 0)
-                arrayAtualizacoes = arrayListOf(0, 0, 0)
+            if (IP.size > 1) {
+                val arrayAtualizacoes = fazerRequisicao()
 
-            updateUI(arrayAtualizacoes)
-            salvarDados(arrayAtualizacoes)
-            carregarHistorico()
+                if (arrayAtualizacoes[0] > 0) {
+                    updateUI(arrayAtualizacoes)
+                    salvarDados(arrayAtualizacoes)
+                    carregarHistorico()
+                }
 
-            mainHandler.postDelayed(this, 1000)
+                mainHandler.postDelayed(this, 1000)
+            }
         }
     }
 
@@ -141,8 +147,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fazerRequisicao(): ArrayList<Int> {
-        val ip = if (debug) "192.168.0.175" else "192.168.0.133"
-        val porta = if (debug) 5000 else 80
+        val ip = IP[0] //if (debug) "192.168.0.175" else "192.168.0.133"
+        val porta = IP[1].toInt() //if (debug) 5000 else 80
         val array = arrayListOf(0, 0, 0)
 
         val urlConnection =
