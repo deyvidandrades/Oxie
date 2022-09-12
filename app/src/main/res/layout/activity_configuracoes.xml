@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -14,10 +15,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16sp"
-            android:layout_marginTop="16dp"
+            android:background="@color/backgroundLight"
+            android:elevation="1dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:paddingHorizontal="16sp"
+            android:paddingVertical="16dp"
             android:weightSum="4">
 
             <ImageView
@@ -94,7 +97,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginVertical="8dp"
                     android:background="@drawable/rounded_r16"
-                    android:backgroundTint="@color/accentRed"
+                    android:backgroundTint="@android:color/holo_red_light"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
                     android:text="@string/excluir"
@@ -104,6 +107,83 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dispositivo"
+                    android:textColor="?android:textColorSecondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_r16"
+                android:backgroundTint="?android:colorSecondary"
+                android:elevation="1dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="16sp"
+                android:paddingVertical="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:labelFor="@+id/et_endereco_ip"
+                    android:text="@string/endere_o_ip_do_dispositivo"
+                    android:textColor="?android:textColorSecondary"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <EditText
+                        android:id="@+id/et_endereco_ip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:layout_toStartOf="@+id/btn_salvar"
+                        android:autofillHints=""
+                        android:imeOptions="actionDone"
+                        android:inputType="number|numberDecimal"
+                        android:minHeight="48dp"
+                        android:text="@string/ip_debug"
+                        android:textColor="?android:textColorSecondary"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    <TextView
+                        android:id="@+id/btn_salvar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/rounded_r16"
+                        android:backgroundTint="@color/accentBlue"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="@string/salvar"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="?android:textColorSecondary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -112,7 +192,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 

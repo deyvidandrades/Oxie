@@ -11,7 +11,7 @@
         <item name="android:colorAccent">@color/accentBlue</item>
         <item name="colorAccent">@color/accentBlue</item>
 
-        <item name="android:statusBarColor">@color/backgroundDark</item>
+        <item name="android:statusBarColor">@color/backgroundLight</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:navigationBarColor">@color/backgroundDark</item>
         <item name="android:windowLightNavigationBar">false</item>
