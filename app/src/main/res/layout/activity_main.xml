@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:weightSum="6">
@@ -92,7 +92,8 @@
         android:text="@string/medias"
         android:textColor="?android:textColorSecondary"
         android:textSize="32sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,7 +123,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
-                    android:progress="65"
+                    android:progress="0"
                     app:indicatorColor="@color/accentRed"
                     app:indicatorDirectionCircular="counterclockwise"
                     app:indicatorSize="80dp"
@@ -179,7 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
-                    android:progress="47"
+                    android:progress="0"
                     app:indicatorColor="@color/accentBlue"
                     app:indicatorDirectionCircular="counterclockwise"
                     app:indicatorSize="80dp"
@@ -235,7 +236,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
-                    android:progress="32"
+                    android:progress="0"
                     app:indicatorColor="@color/accentGreen"
                     app:indicatorDirectionCircular="counterclockwise"
                     app:indicatorSize="80dp"
@@ -277,260 +278,286 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/hist_rico"
-        android:textColor="?android:textColorSecondary"
-        android:textSize="32sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:id="@+id/li_historico_batimentos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_r16"
-        android:backgroundTint="?android:colorSecondary"
-        android:baselineAligned="false"
-        android:elevation="1dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="16dp"
-        android:weightSum="3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:contentDescription="@string/batimentos"
-                    android:src="@drawable/ic_pulse_svgrepo_com"
-                    app:tint="@color/accentRed" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="@string/batimentos"
-                    android:textColor="@color/accentRed"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="129"
-                    android:textColor="?android:textColorSecondary"
-                    android:textSize="32sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="bpm"
-                    android:textAlignment="center"
-                    android:textAllCaps="true"
-                    android:textColor="?android:textColor"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="@string/abrir_historico_de_batimentos"
-            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="?android:textColor" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/li_historico_oxigenacao"
+    <RelativeLayout
+        android:id="@+id/re_historico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_r16"
-        android:backgroundTint="?android:colorSecondary"
-        android:baselineAligned="false"
-        android:elevation="1dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="16dp"
-        android:weightSum="3">
+        android:layout_marginBottom="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:contentDescription="@string/batimentos"
-                    android:src="@drawable/ic_oxygen_svgrepo_com"
-                    app:tint="@color/accentBlue" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/oxigena_o"
-                    android:textColor="@color/accentBlue"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="999"
-                    android:textColor="?android:textColorSecondary"
-                    android:textSize="32sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/percent"
-                    android:textAlignment="center"
-                    android:textAllCaps="true"
-                    android:textColor="?android:textColor"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <ImageView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="@string/abrir_historico_de_batimentos"
-            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="?android:textColor" />
-    </LinearLayout>
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/tv_ver_todos"
+            android:text="@string/hist_rico"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/li_historico_passos"
+        <TextView
+            android:id="@+id/tv_ver_todos"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="@string/ver_todos"
+            android:textAlignment="center"
+            android:textColor="?android:textColor"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_historico"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_r16"
-        android:backgroundTint="?android:colorSecondary"
-        android:baselineAligned="false"
-        android:elevation="1dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="16dp"
-        android:weightSum="3">
+        android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical">
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/li_historico_batimentos"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/rounded_r16"-->
+    <!--        android:backgroundTint="?android:colorSecondary"-->
+    <!--        android:baselineAligned="false"-->
+    <!--        android:elevation="1dp"-->
+    <!--        android:gravity="center_vertical"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:paddingHorizontal="16dp"-->
+    <!--        android:paddingVertical="16dp"-->
+    <!--        android:weightSum="3">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="2"-->
+    <!--            android:orientation="vertical">-->
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:contentDescription="@string/batimentos"
-                    android:src="@drawable/ic_walk_svgrepo_com"
-                    app:tint="@color/accentGreen" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="@string/passos"
-                    android:textColor="@color/accentGreen"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="center_vertical"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                tools:ignore="UseCompoundDrawables">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+    <!--                <ImageView-->
+    <!--                    android:layout_width="16dp"-->
+    <!--                    android:layout_height="16dp"-->
+    <!--                    android:contentDescription="@string/batimentos"-->
+    <!--                    android:src="@drawable/ic_pulse_svgrepo_com"-->
+    <!--                    app:tint="@color/accentRed" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5782"
-                    android:textColor="?android:textColorSecondary"
-                    android:textSize="32sp"
-                    android:textStyle="bold" />
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="8dp"-->
+    <!--                    android:text="@string/batimentos"-->
+    <!--                    android:textColor="@color/accentRed"-->
+    <!--                    android:textSize="16sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/passos_"
-                    android:textAlignment="center"
-                    android:textAllCaps="true"
-                    android:textColor="?android:textColor"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:orientation="horizontal">-->
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="@string/abrir_historico_de_batimentos"
-            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="?android:textColor" />
-    </LinearLayout>
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="129"-->
+    <!--                    android:textColor="?android:textColorSecondary"-->
+    <!--                    android:textSize="32sp"-->
+    <!--                    android:textStyle="bold" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="4dp"-->
+    <!--                    android:text="bpm"-->
+    <!--                    android:textAlignment="center"-->
+    <!--                    android:textAllCaps="true"-->
+    <!--                    android:textColor="?android:textColor"-->
+    <!--                    android:textSize="16sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
+    <!--        </LinearLayout>-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:contentDescription="@string/abrir_historico_de_batimentos"-->
+    <!--            android:src="@drawable/ic_baseline_arrow_forward_ios_24"-->
+    <!--            app:tint="?android:textColor" />-->
+
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/li_historico_oxigenacao"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:background="@drawable/rounded_r16"-->
+    <!--        android:backgroundTint="?android:colorSecondary"-->
+    <!--        android:baselineAligned="false"-->
+    <!--        android:elevation="1dp"-->
+    <!--        android:gravity="center_vertical"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:paddingHorizontal="16dp"-->
+    <!--        android:paddingVertical="16dp"-->
+    <!--        android:weightSum="3">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="2"-->
+    <!--            android:orientation="vertical">-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="center_vertical"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                tools:ignore="UseCompoundDrawables">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="32dp"-->
+    <!--                    android:contentDescription="@string/batimentos"-->
+    <!--                    android:src="@drawable/ic_oxygen_svgrepo_com"-->
+    <!--                    app:tint="@color/accentBlue" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="@string/oxigena_o"-->
+    <!--                    android:textColor="@color/accentBlue"-->
+    <!--                    android:textSize="16sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="999"-->
+    <!--                    android:textColor="?android:textColorSecondary"-->
+    <!--                    android:textSize="32sp"-->
+    <!--                    android:textStyle="bold" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="4dp"-->
+    <!--                    android:text="@string/percent"-->
+    <!--                    android:textAlignment="center"-->
+    <!--                    android:textAllCaps="true"-->
+    <!--                    android:textColor="?android:textColor"-->
+    <!--                    android:textSize="16sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
+
+
+    <!--        </LinearLayout>-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:contentDescription="@string/abrir_historico_de_batimentos"-->
+    <!--            android:src="@drawable/ic_baseline_arrow_forward_ios_24"-->
+    <!--            app:tint="?android:textColor" />-->
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/li_historico_passos"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:background="@drawable/rounded_r16"-->
+    <!--        android:backgroundTint="?android:colorSecondary"-->
+    <!--        android:baselineAligned="false"-->
+    <!--        android:elevation="1dp"-->
+    <!--        android:gravity="center_vertical"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:paddingHorizontal="16dp"-->
+    <!--        android:paddingVertical="16dp"-->
+    <!--        android:weightSum="3">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="2"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="center_vertical"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                tools:ignore="UseCompoundDrawables">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="16dp"-->
+    <!--                    android:layout_height="16dp"-->
+    <!--                    android:contentDescription="@string/batimentos"-->
+    <!--                    android:src="@drawable/ic_walk_svgrepo_com"-->
+    <!--                    app:tint="@color/accentGreen" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="8dp"-->
+    <!--                    android:text="@string/passos"-->
+    <!--                    android:textColor="@color/accentGreen"-->
+    <!--                    android:textSize="16sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="5782"-->
+    <!--                    android:textColor="?android:textColorSecondary"-->
+    <!--                    android:textSize="32sp"-->
+    <!--                    android:textStyle="bold" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="4dp"-->
+    <!--                    android:text="@string/passos_"-->
+    <!--                    android:textAlignment="center"-->
+    <!--                    android:textAllCaps="true"-->
+    <!--                    android:textColor="?android:textColor"-->
+    <!--                    android:textSize="16sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
+    <!--        </LinearLayout>-->
+
+    <!--        <ImageView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:contentDescription="@string/abrir_historico_de_batimentos"-->
+    <!--            android:src="@drawable/ic_baseline_arrow_forward_ios_24"-->
+    <!--            app:tint="?android:textColor" />-->
+    <!--    </LinearLayout>-->
 
 </LinearLayout>
