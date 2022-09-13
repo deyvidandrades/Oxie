@@ -7,41 +7,40 @@
     android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/backgroundLight"
         android:elevation="2dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="16dp"
-        android:weightSum="6">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/btn_conectar"
             android:text="@string/monitor"
             android:textAllCaps="true"
             android:textColor="?android:textColorSecondary"
-            android:textSize="32sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/btn_conectar"
-            android:layout_width="200dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16sp"
-            android:layout_weight="2">
+            android:layout_toStartOf="@+id/btn_menu"
+            android:background="@drawable/rounded_r8"
+            android:backgroundTint="@color/accentBlue"
+            android:minHeight="48dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:background="@drawable/rounded_r8"
-                android:backgroundTint="@color/accentBlue"
-                android:paddingHorizontal="12sp"
-                android:paddingVertical="8sp"
                 android:text="@string/conectar"
                 android:textAlignment="center"
                 android:textAllCaps="true"
@@ -52,18 +51,19 @@
 
         <RelativeLayout
             android:id="@+id/btn_desconectar"
-            android:layout_width="200dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16sp"
-            android:layout_weight="2"
+            android:layout_toStartOf="@+id/btn_menu"
+            android:background="@drawable/rounded_r8"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:minHeight="48dp"
             android:visibility="gone">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:background="@drawable/rounded_r8"
-                android:backgroundTint="@color/accentRed"
                 android:paddingHorizontal="12sp"
                 android:paddingVertical="8sp"
                 android:text="@string/desconectar"
@@ -76,14 +76,14 @@
 
         <ImageView
             android:id="@+id/btn_menu"
-            android:layout_width="90dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:contentDescription="@string/batimentos"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/btn_abrir_configuracoes"
             android:src="@drawable/ic_baseline_menu_24"
             app:tint="?android:textColorSecondary" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -141,7 +141,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/batimentos"
@@ -197,7 +197,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/oxigena_o"
@@ -213,7 +213,7 @@
                     android:text="@string/zero"
                     android:textAlignment="center"
                     android:textColor="?android:textColorSecondary"
-                    android:textSize="14sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -252,7 +252,7 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/passos"
@@ -268,7 +268,7 @@
                     android:text="@string/zero"
                     android:textAlignment="center"
                     android:textColor="?android:textColorSecondary"
-                    android:textSize="14sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -308,7 +308,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_historico"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:contentDescription="@null" />
 
     </LinearLayout>
 </LinearLayout>

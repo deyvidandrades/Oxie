@@ -29,4 +29,5 @@
     <string name="ip_debug">192.168.0.175:5000</string>
     <string name="salvar">salvar</string>
     <string name="dispositivo">Dispositivo</string>
+    <string name="btn_abrir_configuracoes">Botão para abrir configurações</string>
 </resources>
