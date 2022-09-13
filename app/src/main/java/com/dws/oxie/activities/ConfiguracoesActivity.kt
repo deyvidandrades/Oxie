@@ -32,7 +32,7 @@ class ConfiguracoesActivity : AppCompatActivity() {
             AnimacaoBotao.animar(view)
 
             Persistencia(applicationContext).deletarDados("historico")
-            parent.recreate()
+            finish()
         }
 
         btnSalvarIP.setOnClickListener { view ->
