@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnConectar: RelativeLayout
     private lateinit var btnDesconectar: RelativeLayout
 
-    private val debug: Boolean = true
+    private val debug: Boolean = false
     private var erroRede = false
 
     private var arrayItemHistorico = ArrayList<ItemHistorico>()
@@ -174,6 +174,8 @@ class MainActivity : AppCompatActivity() {
         val enderecoIp = ip[0] //if (debug) "192.168.0.175" else "192.168.0.133"
         val porta = ip[1].toInt() //if (debug) 5000 else 80
         val array = arrayListOf(0, 0, 0)
+
+        Log.d("DWS.D",ip.toString())
 
         val urlConnection = URL(
             "HTTP",

@@ -45,6 +45,8 @@ class ConfiguracoesActivity : AppCompatActivity() {
         btnSalvarIP.setOnClickListener { view ->
             AnimacaoBotao.animar(view)
             Persistencia(this).salvarIP(etEnderecoIP.text.toString())
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
