@@ -157,7 +157,7 @@
                     android:text="@string/zero"
                     android:textAlignment="center"
                     android:textColor="?android:textColorSecondary"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -213,7 +213,7 @@
                     android:text="@string/zero"
                     android:textAlignment="center"
                     android:textColor="?android:textColorSecondary"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -268,7 +268,7 @@
                     android:text="@string/zero"
                     android:textAlignment="center"
                     android:textColor="?android:textColorSecondary"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
