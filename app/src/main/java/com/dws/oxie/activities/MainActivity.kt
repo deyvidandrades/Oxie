@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +21,6 @@ import com.dws.oxie.assistentes.AnimacaoBotao
 import com.dws.oxie.objetos.ItemHistorico
 import com.dws.oxie.persistencia.Persistencia
 import com.google.android.material.progressindicator.CircularProgressIndicator
-import java.net.NoRouteToHostException
 import java.net.URL
 import java.net.URLConnection
 import java.util.*
@@ -29,31 +29,48 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textBatimentos: TextView
     private lateinit var textOxigenacao: TextView
     private lateinit var textPassos: TextView
-    private lateinit var IP: List<String>
+    private lateinit var ip: List<String>
 
     private lateinit var progressBatimentos: CircularProgressIndicator
     private lateinit var progressOxigenacao: CircularProgressIndicator
     private lateinit var progressPassos: CircularProgressIndicator
 
+    private lateinit var btnConectar: RelativeLayout
+    private lateinit var btnDesconectar: RelativeLayout
+
     private val debug: Boolean = true
+    private var erroRede = false
+
     private var arrayItemHistorico = ArrayList<ItemHistorico>()
+    private lateinit var adaptadorHorarioOnibus: AdaptadorItemHistorico
 
     private lateinit var mainHandler: Handler
     private val updateTextTask = object : Runnable {
         override fun run() {
-            IP = Persistencia(applicationContext).carregarIP().split(":")
-            Log.d("DWS.D", IP.toString())
+            if (!erroRede) {
+                ip = Persistencia(applicationContext).carregarIP().split(":")
+                Log.d("DWS.D", ip.toString())
 
-            if (IP.size > 1) {
-                val arrayAtualizacoes = fazerRequisicao()
+                if (ip.size > 1) {
+                    val arrayAtualizacoes = fazerRequisicao()
 
-                if (arrayAtualizacoes[0] > 0) {
-                    updateUI(arrayAtualizacoes)
-                    salvarDados(arrayAtualizacoes)
-                    carregarHistorico()
+                    if (arrayAtualizacoes[0] > 0) {
+                        updateUI(arrayAtualizacoes)
+                        salvarDados(arrayAtualizacoes)
+                        carregarHistorico()
+                    }
+
+                    mainHandler.postDelayed(this, 1000)
                 }
+            } else {
+                //mainHandler.removeCallbacks(updateTextTask)
+                btnConectar.visibility = View.VISIBLE
+                btnDesconectar.visibility = View.GONE
 
-                mainHandler.postDelayed(this, 1000)
+                Toast.makeText(
+                    this@MainActivity, "Falha na conexão", Toast.LENGTH_LONG
+                ).show()
+
             }
         }
     }
@@ -78,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManagerHorarioOnibus =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        val adaptadorHorarioOnibus = AdaptadorItemHistorico(this, arrayItemHistorico)
+        adaptadorHorarioOnibus = AdaptadorItemHistorico(this, arrayItemHistorico)
 
         recyclerHistorico.setHasFixedSize(true)
         recyclerHistorico.adapter = adaptadorHorarioOnibus
@@ -88,10 +105,13 @@ class MainActivity : AppCompatActivity() {
         carregarHistorico()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun carregarHistorico() {
         val persistencia = Persistencia(applicationContext)
         val dados = persistencia.carregarDados("historico")
         val reHistorico = findViewById<RelativeLayout>(R.id.re_historico)
+
+        arrayItemHistorico.clear()
 
         if (dados.size > 0) {
             reHistorico.visibility = View.VISIBLE
@@ -108,13 +128,15 @@ class MainActivity : AppCompatActivity() {
 
             if (dados.size > 1)
                 arrayItemHistorico.add(dados[1])
+
+            adaptadorHorarioOnibus.notifyDataSetChanged()
         } else
             reHistorico.visibility = View.GONE
     }
 
     private fun configurarBotoes() {
-        val btnConectar = findViewById<RelativeLayout>(R.id.btn_conectar)
-        val btnDesconectar = findViewById<RelativeLayout>(R.id.btn_desconectar)
+        btnConectar = findViewById(R.id.btn_conectar)
+        btnDesconectar = findViewById(R.id.btn_desconectar)
         val btnMenu = findViewById<ImageView>(R.id.btn_menu)
         val btnVerTodos = findViewById<TextView>(R.id.tv_ver_todos)
 
@@ -124,6 +146,7 @@ class MainActivity : AppCompatActivity() {
 
             btnConectar.visibility = View.GONE
             btnDesconectar.visibility = View.VISIBLE
+            erroRede = false
         }
 
         btnDesconectar.setOnClickListener { view ->
@@ -137,6 +160,7 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, ConfiguracoesActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         btnVerTodos.setOnClickListener { view ->
@@ -147,12 +171,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fazerRequisicao(): ArrayList<Int> {
-        val ip = IP[0] //if (debug) "192.168.0.175" else "192.168.0.133"
-        val porta = IP[1].toInt() //if (debug) 5000 else 80
+        val enderecoIp = ip[0] //if (debug) "192.168.0.175" else "192.168.0.133"
+        val porta = ip[1].toInt() //if (debug) 5000 else 80
         val array = arrayListOf(0, 0, 0)
 
-        val urlConnection =
-            URL("HTTP", ip, porta, if (debug) "" else "cu").openConnection() as URLConnection
+        val urlConnection = URL(
+            "HTTP",
+            enderecoIp,
+            porta,
+            if (debug) "" else "cu"
+        ).openConnection() as URLConnection
 
         val thread = Thread {
             try {
@@ -162,15 +190,14 @@ class MainActivity : AppCompatActivity() {
                 array.add(res[1].toInt())
                 array.add(res[0].toInt())
 
-            } catch (e: NoRouteToHostException) {
-
             } catch (e: Exception) {
-                e.printStackTrace()
+                erroRede = true
             }
         }
 
         thread.start()
-        thread.join(500)
+        thread.join(1000)
+
         return array
     }
 
