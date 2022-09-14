@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Oxie Monitor</string>
-    <string name="versao"><b>Oxie monitor</b> v1.0.9</string>
+    <string name="versao"><b>Oxie monitor</b> v1.0.12</string>
     <string name="por_deyvidandrades">por <b>@deyvidandrades</b></string>
 
     <string name="batimentos">Batimentos</string>
