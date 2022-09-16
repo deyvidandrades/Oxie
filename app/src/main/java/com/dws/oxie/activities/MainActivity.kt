@@ -62,15 +62,6 @@ class MainActivity : AppCompatActivity() {
                     mainHandler.postDelayed(this, 1000)
                 }
 
-                //with(btnConectar) {
-                //    setImageDrawable(
-                //        AppCompatResources.getDrawable(
-                //            this@MainActivity,
-                //            R.drawable.ic_outline_link_24
-                //        )
-                //    )
-                //}
-
                 btnConectar.setColorFilter(getColor(R.color.accentBlue))
             } else {
                 btnConectar.setColorFilter(getColor(R.color.textLight))
