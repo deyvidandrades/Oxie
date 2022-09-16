@@ -25,9 +25,6 @@ class ConfiguracoesActivity : AppCompatActivity() {
 
         btnVoltar.setOnClickListener { view ->
             AnimacaoBotao.animar(view)
-
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
         }
 
@@ -35,18 +32,19 @@ class ConfiguracoesActivity : AppCompatActivity() {
             AnimacaoBotao.animar(view)
 
             Persistencia(applicationContext).deletarDados("historico")
-
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
         }
 
         btnSalvarIP.setOnClickListener { view ->
             AnimacaoBotao.animar(view)
             Persistencia(this).salvarIP(etEnderecoIP.text.toString())
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
             finish()
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }
