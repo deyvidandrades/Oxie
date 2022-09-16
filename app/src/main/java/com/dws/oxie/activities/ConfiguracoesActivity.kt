@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.dws.oxie.R
 import com.dws.oxie.assistentes.AnimacaoBotao
@@ -18,8 +17,8 @@ class ConfiguracoesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_configuracoes)
 
         val btnVoltar = findViewById<ImageView>(R.id.btn_voltar)
-        val btnExcluirDados = findViewById<TextView>(R.id.btn_excluir)
-        val btnSalvarIP = findViewById<TextView>(R.id.btn_salvar)
+        val btnExcluirDados = findViewById<ImageView>(R.id.btn_excluir)
+        val btnSalvarIP = findViewById<ImageView>(R.id.btn_salvar)
         val etEnderecoIP = findViewById<EditText>(R.id.et_endereco_ip)
 
         etEnderecoIP.setText(Persistencia(applicationContext).carregarIP())

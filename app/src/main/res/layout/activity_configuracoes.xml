@@ -75,8 +75,8 @@
                 android:background="@drawable/rounded_r16"
                 android:backgroundTint="?android:colorSecondary"
                 android:elevation="1dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="8dp">
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -89,23 +89,19 @@
                     android:textColor="?android:textColorSecondary"
                     android:textSize="16sp" />
 
-                <TextView
+                <ImageView
                     android:id="@+id/btn_excluir"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginVertical="8dp"
+                    android:layout_marginVertical="4dp"
                     android:background="@drawable/rounded_r16"
                     android:backgroundTint="@android:color/holo_red_light"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@string/excluir"
-                    android:textAlignment="center"
-                    android:textAllCaps="true"
-                    android:textColor="?android:textColorSecondary"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:contentDescription="@string/excluir_dados"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_outline_delete_forever_24"
+                    app:tint="?android:textColorSecondary" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -132,7 +128,7 @@
                 android:elevation="1dp"
                 android:orientation="vertical"
                 android:paddingHorizontal="16sp"
-                android:paddingVertical="16dp">
+                android:paddingVertical="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -166,22 +162,19 @@
                         android:textStyle="bold"
                         tools:ignore="DuplicateSpeakableTextCheck" />
 
-                    <TextView
+                    <ImageView
                         android:id="@+id/btn_salvar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
+                        android:layout_marginVertical="4dp"
                         android:background="@drawable/rounded_r16"
-                        android:backgroundTint="@color/accentBlue"
-                        android:paddingHorizontal="16dp"
-                        android:paddingVertical="8dp"
-                        android:text="@string/salvar"
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="?android:textColorSecondary"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:backgroundTint="?android:colorAccent"
+                        android:contentDescription="@string/excluir_dados"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_outline_done_24"
+                        app:tint="?android:textColorSecondary" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>

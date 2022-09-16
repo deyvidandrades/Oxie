@@ -27,52 +27,16 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <RelativeLayout
+        <ImageView
             android:id="@+id/btn_conectar"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16sp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_toStartOf="@+id/btn_menu"
-            android:background="@drawable/rounded_r8"
-            android:backgroundTint="@color/accentBlue"
-            android:minHeight="48dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/conectar"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="?android:textColorSecondary"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/btn_desconectar"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16sp"
-            android:layout_toStartOf="@+id/btn_menu"
-            android:background="@drawable/rounded_r8"
-            android:backgroundTint="@android:color/holo_red_light"
-            android:minHeight="48dp"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:paddingHorizontal="12sp"
-                android:paddingVertical="8sp"
-                android:text="@string/desconectar"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="?android:textColorSecondary"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
+            android:contentDescription="@string/conectar"
+            android:padding="2dp"
+            android:src="@drawable/ic_outline_link_24"
+            app:tint="?android:textColorSecondary" />
 
         <ImageView
             android:id="@+id/btn_menu"
@@ -286,6 +250,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_toStartOf="@+id/tv_ver_todos"
+                android:labelFor="@id/recycler_historico"
                 android:text="@string/hist_rico"
                 android:textColor="?android:textColorSecondary"
                 android:textSize="32sp"
@@ -309,7 +274,7 @@
             android:id="@+id/recycler_historico"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@null" />
+            android:contentDescription="@string/lista_historico" />
 
     </LinearLayout>
 </LinearLayout>

@@ -35,8 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressOxigenacao: CircularProgressIndicator
     private lateinit var progressPassos: CircularProgressIndicator
 
-    private lateinit var btnConectar: RelativeLayout
-    private lateinit var btnDesconectar: RelativeLayout
+    private lateinit var btnConectar: ImageView
 
     private val debug: Boolean = false
     private var erroRede = false
@@ -62,10 +61,19 @@ class MainActivity : AppCompatActivity() {
 
                     mainHandler.postDelayed(this, 1000)
                 }
+
+                //with(btnConectar) {
+                //    setImageDrawable(
+                //        AppCompatResources.getDrawable(
+                //            this@MainActivity,
+                //            R.drawable.ic_outline_link_24
+                //        )
+                //    )
+                //}
+
+                btnConectar.setColorFilter(getColor(R.color.accentBlue))
             } else {
-                //mainHandler.removeCallbacks(updateTextTask)
-                btnConectar.visibility = View.VISIBLE
-                btnDesconectar.visibility = View.GONE
+                btnConectar.setColorFilter(getColor(R.color.textLight))
 
                 Toast.makeText(
                     this@MainActivity, "Falha na conexão", Toast.LENGTH_LONG
@@ -136,25 +144,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun configurarBotoes() {
         btnConectar = findViewById(R.id.btn_conectar)
-        btnDesconectar = findViewById(R.id.btn_desconectar)
         val btnMenu = findViewById<ImageView>(R.id.btn_menu)
         val btnVerTodos = findViewById<TextView>(R.id.tv_ver_todos)
 
         btnConectar.setOnClickListener { view ->
             AnimacaoBotao.animar(view)
             mainHandler.post(updateTextTask)
-
-            btnConectar.visibility = View.GONE
-            btnDesconectar.visibility = View.VISIBLE
             erroRede = false
         }
 
-        btnDesconectar.setOnClickListener { view ->
-            mainHandler.removeCallbacks(updateTextTask)
-
-            btnDesconectar.visibility = View.GONE
-            btnConectar.visibility = View.VISIBLE
-        }
         btnMenu.setOnClickListener { view ->
             AnimacaoBotao.animar(view)
 
@@ -174,8 +172,6 @@ class MainActivity : AppCompatActivity() {
         val enderecoIp = ip[0] //if (debug) "192.168.0.175" else "192.168.0.133"
         val porta = ip[1].toInt() //if (debug) 5000 else 80
         val array = arrayListOf(0, 0, 0)
-
-        Log.d("DWS.D",ip.toString())
 
         val urlConnection = URL(
             "HTTP",
