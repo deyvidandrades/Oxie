@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.dws.oxie"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 6
         versionName "1.0.14"
 
@@ -32,6 +32,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.dws.oxie'
 }
 
 dependencies {
@@ -43,7 +44,7 @@ dependencies {
     //noinspection GradleDependency
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.android.material:material:1.7.0'
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.core:core-splashscreen:1.0.0'
