@@ -1,4 +1,4 @@
-# Oxie
+# Oxie Monitor
 Oxie é um monitor cardíaco que mede os batimentos, oxigenação e possui um contador de passos.
 
 ![oxie-banner](https://github.com/deyvidandrades/Oxie/blob/master/app/src/main/oxie-banner.png)
